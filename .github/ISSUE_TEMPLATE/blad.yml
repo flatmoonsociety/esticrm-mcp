@@ -1,0 +1,84 @@
+name: Zgłoszenie błędu
+description: Zgłoś powtarzalny problem z serwerem MCP.
+title: "[Błąd]: "
+labels:
+  - błąd
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Dziękujemy za zgłoszenie. Usuń tokeny, identyfikatory firm i dane osobowe z opisu oraz logów.
+
+  - type: checkboxes
+    id: warunki
+    attributes:
+      label: Sprawdzenie wstępne
+      options:
+        - label: Sprawdziłem istniejące zgłoszenia.
+          required: true
+        - label: To zgłoszenie nie zawiera sekretów ani danych osobowych.
+          required: true
+        - label: To nie jest niezałatana podatność bezpieczeństwa.
+          required: true
+
+  - type: textarea
+    id: opis
+    attributes:
+      label: Opis problemu
+      description: Opisz, co się wydarzyło i czego oczekiwałeś.
+      placeholder: Po wywołaniu narzędzia…
+    validations:
+      required: true
+
+  - type: textarea
+    id: odtworzenie
+    attributes:
+      label: Sposób odtworzenia
+      description: Podaj minimalne kroki z fikcyjnymi danymi.
+      placeholder: |
+        1. Uruchom…
+        2. Wywołaj…
+        3. Zobacz błąd…
+    validations:
+      required: true
+
+  - type: input
+    id: wersja
+    attributes:
+      label: Wersja projektu
+      placeholder: Wersja wydania albo skrót zatwierdzenia
+    validations:
+      required: true
+
+  - type: input
+    id: node
+    attributes:
+      label: Wersja Node.js
+      placeholder: Wynik polecenia node --version
+    validations:
+      required: true
+
+  - type: dropdown
+    id: klient
+    attributes:
+      label: Klient MCP
+      options:
+        - Codex
+        - Claude Code
+        - Claude Desktop
+        - Inny
+    validations:
+      required: true
+
+  - type: textarea
+    id: logi
+    attributes:
+      label: Oczyszczone logi
+      description: Usuń parametry zapytań, sekrety i dane osobowe. Wklej tylko fragment potrzebny do diagnozy.
+      render: text
+
+  - type: textarea
+    id: dodatkowe
+    attributes:
+      label: Dodatkowy kontekst
+      description: Dodaj inne informacje, które mogą pomóc w diagnozie.

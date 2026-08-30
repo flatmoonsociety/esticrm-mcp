@@ -1,0 +1,55 @@
+name: Propozycja zmiany
+description: Zaproponuj nowe narzędzie, integrację albo ulepszenie.
+title: "[Propozycja]: "
+labels:
+  - propozycja
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Opisz potrzebę użytkownika i oczekiwany rezultat. Nie dołączaj danych z prawdziwego konta EstiCRM.
+
+  - type: checkboxes
+    id: warunki
+    attributes:
+      label: Sprawdzenie wstępne
+      options:
+        - label: Sprawdziłem istniejące zgłoszenia i plan projektu.
+          required: true
+        - label: Propozycja nie zawiera sekretów ani danych osobowych.
+          required: true
+
+  - type: textarea
+    id: potrzeba
+    attributes:
+      label: Potrzeba
+      description: Opisz problem, który ma rozwiązać propozycja.
+      placeholder: Podczas pracy z ofertami potrzebuję…
+    validations:
+      required: true
+
+  - type: textarea
+    id: rozwiazanie
+    attributes:
+      label: Proponowane rozwiązanie
+      description: Opisz zachowanie, parametry i wynik. Zaznacz, czy zmiana zapisuje dane w EstiCRM.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatywy
+    attributes:
+      label: Rozważone alternatywy
+      description: Opisz inne sposoby rozwiązania problemu, jeśli je rozważałeś.
+
+  - type: textarea
+    id: dokumentacja_api
+    attributes:
+      label: Podstawa w dokumentacji API
+      description: Dodaj nazwę operacji albo odnośnik do oficjalnej dokumentacji. Nie kopiuj całych dokumentów.
+
+  - type: textarea
+    id: dodatkowe
+    attributes:
+      label: Dodatkowy kontekst
+      description: Dodaj makiety lub przykłady oparte wyłącznie na fikcyjnych danych.

@@ -1,0 +1,16 @@
+node_modules/
+dist/
+coverage/
+tmp/
+
+.env
+.env.*
+!.env.example
+.mcp.json
+
+*.log
+*.tgz
+.npmrc
+.DS_Store
+.idea/
+.vscode/
